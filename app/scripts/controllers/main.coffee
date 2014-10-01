@@ -10,8 +10,8 @@
 angular.module('dalcApp')
   .controller 'MainCtrl', ($scope, $http) ->
 
-    $scope.itemCost = 109980
-    $scope.shippingCost = 6000
+    $scope.itemCost = 0
+    $scope.shippingCost = 0
     $scope.bankFee = ->
       if $scope.itemCost < 30000 then 500 else 630
     $scope.brokerFee = ->
@@ -23,7 +23,7 @@ angular.module('dalcApp')
         else 3500
       100 * Math.floor(fee/100)
     
-    $scope.tyres = 4
+    $scope.tyres = 0
     $scope.tyresTotal = ->
       $scope.tyres * 1000
 
@@ -35,7 +35,7 @@ angular.module('dalcApp')
       "Surface",
       "EMS"
     ]
-    $scope.countries = ["AU/NZ", "Europe"]
+    $scope.countries = ["AUS/NZ", "USA/Canada", "Europe"]
 
     $scope.country = $scope.countries[0]
     $scope.shippingType = $scope.shippingTypes[0]
@@ -75,7 +75,7 @@ angular.module('dalcApp')
 
     $scope.ems = (weight, country) ->
       [init, incrOne, incrTwo, incrThree, finalIncrement] = switch
-        when country is "Australia" then  [1200, 180, 400, 700, 1100]
+        when country is "AUS/NZ" or country is "USA/Canada" then  [1200, 180, 400, 700, 1100]
         when country is "Europe"    then  [1500, 200, 450, 800, 1300]
       ems = switch
         when weight <= 300  then init

@@ -62,7 +62,7 @@
         <select class="form-control" ng-model="shippingType" ng-options="type for type in shippingTypes">
         </select>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <select class="form-control" ng-model="country" ng-options="country for country in countries">
         </select>
       </div>
@@ -102,7 +102,7 @@
 
    <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Currency</label>
-      <div class="col-sm-3">
+      <div class="col-sm-5">
         <select class="form-control" ng-model="myCurrency" ng-options="currency for currency in currCountries"
                 ng-change="exchangeRateDefaults()">
         </select>
@@ -113,10 +113,10 @@
     <div class="form-group">
       <label for="inputPassword3" class="col-sm-2 control-label">Exchange Rate</label>
       <div class="col-sm-4">
-        <label class="col-sm-4">
+        <!-- <label class="col-sm-4">
           {{exchangeRate}}
-        </label>
-        <!-- <input type="number" class="form-control" id="total-cost" placeholder="sea" ng-model="exchangeRate"> -->
+        </label> -->
+        <input type="number" class="form-control" id="total-cost" placeholder="sea" ng-model="exchangeRate">
         <button class="btn btn-default" ng-click="fetchYenAUD($event)">Fetch Current <i class="fa fa-refresh" ng-class="fetching? 'fa-spin': 'hide'"></i></button> 
       </div>
       

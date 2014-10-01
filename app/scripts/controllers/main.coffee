@@ -43,8 +43,10 @@ angular.module('dalcApp')
     # $scope.currencies = ["AUD", "USD", "EUR"]
     $scope.currencies = 
       AUD: "$"
+      NZD: "$"
       USD: "$"
       EUR: "€"
+      CAD: "$"
     $scope.currCountries = Object.keys $scope.currencies
     $scope.myCurrency = 'AUD'
 
@@ -106,6 +108,8 @@ angular.module('dalcApp')
         when $scope.myCurrency is 'AUD' then 95.5
         when $scope.myCurrency is 'USD' then 109.87
         when $scope.myCurrency is 'EUR' then 138.6
+        when $scope.myCurrency is 'NZD' then 85.4
+        when $scope.myCurrency is 'CAD' then 98
 
     $scope.exchangeRate = $scope.exchangeRateDefaults()
     $scope.exchangeRateSub = ->
